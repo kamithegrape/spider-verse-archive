@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="description"
+    content="SPIDER-VERSE // ARCHIVE — an interactive dimensional database."
+  />
+
+  <title>SPIDER-VERSE // ARCHIVE</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =========================
+       BOOT SCREEN
+  ========================== -->
+
+  <div id="boot-screen">
+
+    <div class="boot-grid"></div>
+
+    <div class="boot-container">
+
+      <div class="boot-label">
+        SPIDER-VERSE NETWORK
+      </div>
+
+      <div id="boot-text"></div>
+
+      <div class="boot-progress">
+        <div id="boot-progress-bar"></div>
+      </div>
+
+      <button id="enter-archive" class="primary-button hidden">
+        ACCESS ARCHIVE →
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       APPLICATION
+  ========================== -->
+
+  <div id="app" class="hidden">
+
+    <!-- HEADER -->
+
+    <header class="topbar">
+
+      <div class="logo">
+        <span class="logo-symbol">✳</span>
+        SPIDER-VERSE <span>//</span> ARCHIVE
+      </div>
+
+      <div class="network-status">
+        <span class="status-dot"></span>
+        NETWORK ONLINE
+      </div>
+
+      <button id="menu-button" class="menu-button">
+        ☰
+      </button>
+
+    </header>
+
+
+    <!-- SIDEBAR -->
+
+    <aside id="sidebar">
+
+      <div class="sidebar-title">
+        ARCHIVE MODULES
+      </div>
+
+      <nav>
+
+        <a href="#home">01 <span>Dashboard</span></a>
+
+        <a href="#database">02 <span>Spider Database</span></a>
+
+        <a href="#spider-test">03 <span>Spider Test</span></a>
+
+        <a href="#spider-sense">04 <span>Spider-Sense</span></a>
+
+        <a href="#suits">05 <span>Suit Archive</span></a>
+
+        <a href="#multiverse">06 <span>Multiverse</span></a>
+
+        <a href="#bugle">07 <span>Daily Bugle</span></a>
+
+        <a href="#map">08 <span>Dimensional Map</span></a>
+
+        <a href="#game">09 <span>Rooftop Run</span></a>
+
+        <a href="#classified">10 <span>Classified</span></a>
+
+        <a href="#terminal">11 <span>Terminal</span></a>
+
+      </nav>
+
+
+      <div class="sidebar-footer">
+
+        <div class="progress-heading">
+
+          <span>ARCHIVE PROGRESS</span>
+
+          <span id="progress-number">
+            0%
+          </span>
+
+        </div>
+
+        <div class="progress-bar">
+          <div id="progress-bar-fill"></div>
+        </div>
+
+        <div class="stability">
+          DIMENSIONAL STABILITY
+
+          <strong id="stability-value">
+            98%
+          </strong>
+        </div>
+
+      </div>
+
+    </aside>
+
+
+    <!-- MAIN -->
+
+    <main id="content"></main>
+
+  </div>
+
+
+  <!-- =========================
+       MODAL
+  ========================== -->
+
+  <div id="modal" class="modal hidden">
+
+    <div class="modal-background"></div>
+
+    <div class="modal-content">
+
+      <button id="modal-close">
+        ×
+      </button>
+
+      <div id="modal-body"></div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       TOAST
+  ========================== -->
+
+  <div id="toast"></div>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script src="data/spiders.js"></script>
+  <script src="data/villains.js"></script>
+  <script src="data/universes.js"></script>
+  <script src="data/articles.js"></script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
