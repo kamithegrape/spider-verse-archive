@@ -1,0 +1,685 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080a10">
+  <meta name="description" content="SPIDER-VERSE // ARCHIVE — Classified access only.">
+  <title>SPIDER-VERSE // ARCHIVE</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="scanlines"></div>
+  <div class="noise"></div>
+
+  <!-- Navigation -->
+  <header class="topbar">
+    <a class="brand" href="#home" data-page="home">
+      <span class="brand-mark">✳</span>
+      <span>SPIDER-VERSE <i>//</i> ARCHIVE</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle">☰</button>
+
+    <nav id="nav">
+      <button data-page="home" class="nav-link active">HOME</button>
+      <button data-page="missions" class="nav-link">MISSIONS</button>
+      <button data-page="files" class="nav-link">FILES</button>
+      <button data-page="generator" class="nav-link">GENERATOR</button>
+      <button data-page="sense" class="nav-link">SPIDER-SENSE</button>
+    </nav>
+
+    <div class="status">
+      <span class="live-dot"></span>
+      SYSTEM ONLINE /
+      <span id="progressLabel">0/5 CLEARED</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HOME PAGE -->
+    <section class="page active" id="page-home" data-page="home">
+      <div class="hero-grid">
+
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="redline"></span>
+            CLASSIFIED MULTIVERSE DATABASE
+            <span class="tiny-code">SV-A / 001</span>
+          </div>
+
+          <h1>
+            SPIDER-VERSE
+            <span>//</span><br>
+            <em>ARCHIVE</em>
+          </h1>
+
+          <div class="glitch-rule"></div>
+
+          <p class="hero-lead">
+            Every universe has a story.<br>
+            Every story leaves a trace.
+          </p>
+
+          <p class="muted hero-desc">
+            Welcome, <strong>Spider.</strong> Your access has been granted.
+            Explore the multiverse, run diagnostics, uncover hidden files,
+            and decide what happens when reality starts to fracture.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary" data-go="missions">
+              ENTER THE ARCHIVE <span>↗</span>
+            </button>
+
+            <button class="btn btn-ghost" data-go="files">
+              BROWSE CLASSIFIED FILES
+            </button>
+          </div>
+
+          <div class="hero-foot">
+            <span>ACCESS LEVEL: RESTRICTED</span>
+            <span>EARTH-????</span>
+            <span>DO NOT TRUST THE CANON</span>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="art-frame">
+            <img
+              src="assets/archive-art.png"
+              alt="Spider-Verse inspired multiverse artwork"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"
+            >
+
+            <div class="art-fallback">
+              <span class="orbit orbit-a"></span>
+              <span class="orbit orbit-b"></span>
+              <span class="spider-symbol">✳</span>
+
+              <span class="art-stamp">
+                MULTIVERSE<br>
+                INSTABILITY<br>
+                <b>87.4%</b>
+              </span>
+
+              <span class="art-caption">
+                FIG. 001 — THE WEB IS NEVER STILL
+              </span>
+            </div>
+
+            <div class="art-overlay"></div>
+
+            <div class="art-tag tag-top">
+              ANOMALY DETECTED
+              <span class="live-dot"></span>
+            </div>
+
+            <div class="art-tag tag-bottom">
+              YOUR STORY STARTS HERE
+            </div>
+          </div>
+
+          <div class="side-note">
+            DIFFERENT WORLDS.<br>
+            SAME SPIDER.
+          </div>
+        </div>
+      </div>
+
+      <div class="ticker">
+        <div>
+          INCOMING TRANSMISSION <b>///</b>
+          THE WEB IS FRAYING <b>///</b>
+          UNKNOWN SIGNATURE DETECTED <b>///</b>
+          STAY ALERT <b>///</b>
+          INCOMING TRANSMISSION <b>///</b>
+          THE WEB IS FRAYING <b>///</b>
+        </div>
+      </div>
+
+      <div class="home-bottom">
+        <div>
+          <span class="section-index">01 / BRIEFING</span>
+          <h2>THIS IS NOT A TOUR.</h2>
+          <p class="muted">
+            It's an investigation. Each file you unlock reveals another
+            piece of a bigger pattern. Your choices will decide how
+            the archive ends.
+          </p>
+        </div>
+
+        <div class="mini-stat">
+          <span>KNOWN UNIVERSES</span>
+          <strong>∞</strong>
+          <small>and counting</small>
+        </div>
+
+        <div class="mini-stat">
+          <span>ACTIVE ANOMALIES</span>
+          <strong class="red">07</strong>
+          <small>across the web</small>
+        </div>
+
+        <div class="mini-stat">
+          <span>YOUR STATUS</span>
+          <strong id="homeStatus">UNVERIFIED</strong>
+          <small>awaiting signature</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSIONS -->
+    <section class="page" id="page-missions" data-page="missions">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span class="redline"></span>
+            OPERATIONS BOARD / 02
+          </div>
+
+          <h1>MISSION <em>SELECT</em></h1>
+
+          <p class="muted">
+            Complete the protocols. Follow the anomalies.
+            Nothing here is accidental.
+          </p>
+        </div>
+
+        <div class="section-stamp">
+          FIELD OPERATIONS<br>
+          <b>ACTIVE</b>
+        </div>
+      </div>
+
+      <div class="mission-layout">
+        <div class="mission-list">
+
+          <button class="mission-card" data-mission="signature">
+            <span class="mission-number">01</span>
+            <span class="mission-icon">⌁</span>
+            <span class="mission-info">
+              <b>SPIDER-SIGNATURE</b>
+              <small>Discover the kind of Spider you are.</small>
+            </span>
+            <span class="mission-state" id="state-signature">INITIATE ↗</span>
+          </button>
+
+          <button class="mission-card" data-mission="sense">
+            <span class="mission-number">02</span>
+            <span class="mission-icon">◉</span>
+            <span class="mission-info">
+              <b>SPIDER-SENSE TEST</b>
+              <small>Can you react before danger arrives?</small>
+            </span>
+            <span class="mission-state" id="state-sense">INITIATE ↗</span>
+          </button>
+
+          <button class="mission-card" data-mission="universe">
+            <span class="mission-number">03</span>
+            <span class="mission-icon">◎</span>
+            <span class="mission-info">
+              <b>UNIVERSE GENERATOR</b>
+              <small>Build a reality that should not exist.</small>
+            </span>
+            <span class="mission-state" id="state-universe">INITIATE ↗</span>
+          </button>
+
+          <button class="mission-card" data-mission="files">
+            <span class="mission-number">04</span>
+            <span class="mission-icon">▤</span>
+            <span class="mission-info">
+              <b>CLASSIFIED FILES</b>
+              <small>Open the records marked do not open.</small>
+            </span>
+            <span class="mission-state" id="state-files">INITIATE ↗</span>
+          </button>
+
+          <button class="mission-card final-card" data-mission="final">
+            <span class="mission-number">05</span>
+            <span class="mission-icon">⌑</span>
+            <span class="mission-info">
+              <b>THE FINAL MISSION</b>
+              <small>The web is breaking. Make the call.</small>
+            </span>
+            <span class="mission-state" id="state-final">LOCKED 🔒</span>
+          </button>
+        </div>
+
+        <aside class="mission-aside">
+          <div class="aside-red">
+            EVERY<br>
+            UNIVERSE<br>
+            HAS A<br>
+            <em>SPIDER.</em>
+          </div>
+
+          <div class="radar">
+            <span></span>
+            <i></i>
+          </div>
+
+          <p class="muted tiny">
+            ANOMALY LOG<br>
+            One signal keeps returning.<br>
+            It has your signature.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SPIDER SIGNATURE -->
+    <section class="page" id="page-signature" data-page="signature">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span class="redline"></span>
+            IDENTITY PROTOCOL / 03
+          </div>
+
+          <h1>YOUR SPIDER-<em>SIGNATURE</em></h1>
+          <p class="muted">
+            No two Spiders see the same web. Answer honestly.
+          </p>
+        </div>
+
+        <div class="section-stamp">
+          BIOMETRIC SYNC<br>
+          <b id="sigStep">01 / 04</b>
+        </div>
+      </div>
+
+      <div class="quiz-shell">
+        <div class="quiz-progress">
+          <span id="quizProgress"></span>
+        </div>
+
+        <div id="quizContent"></div>
+
+        <div class="quiz-controls">
+          <button class="btn btn-ghost" id="quizBack" disabled>
+            ← BACK
+          </button>
+
+          <span class="tiny muted">RESPONSE ENCRYPTED LOCALLY</span>
+
+          <button class="btn btn-primary" id="quizNext" disabled>
+            CONTINUE ↗
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPIDER SENSE -->
+    <section class="page" id="page-sense" data-page="sense">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span class="redline"></span>
+            NEURAL RESPONSE LAB / 04
+          </div>
+
+          <h1>SPIDER-<em>SENSE</em> TEST</h1>
+
+          <p class="muted">
+            Wait for the signal. Tap as soon as the warning turns red.
+            False starts count against you.
+          </p>
+        </div>
+
+        <div class="section-stamp">
+          REACTION PROTOCOL<br>
+          <b>3 ROUNDS</b>
+        </div>
+      </div>
+
+      <div class="sense-shell">
+        <div class="sense-display" id="senseDisplay">
+          <div class="sense-ring">
+            <div class="sense-core">✳</div>
+          </div>
+
+          <div class="sense-status" id="senseStatus">
+            SYSTEM READY
+          </div>
+
+          <p id="senseHint">Press start. Stay focused.</p>
+        </div>
+
+        <div class="sense-data">
+          <div>
+            <span>ROUND</span>
+            <b id="senseRound">— / 3</b>
+          </div>
+
+          <div>
+            <span>LAST RESPONSE</span>
+            <b id="senseLast">—</b>
+          </div>
+
+          <div>
+            <span>AVERAGE</span>
+            <b id="senseAvg">—</b>
+          </div>
+
+          <div>
+            <span>SENSE LEVEL</span>
+            <b id="senseLevel" class="red">UNTESTED</b>
+          </div>
+        </div>
+
+        <button class="btn btn-primary sense-start" id="senseStart">
+          START TEST ↗
+        </button>
+      </div>
+
+      <p class="tiny muted footnote">
+        This is a reflex mini-game, not a medical or scientific assessment.
+      </p>
+    </section>
+
+    <!-- UNIVERSE GENERATOR -->
+    <section class="page" id="page-generator" data-page="generator">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span class="redline"></span>
+            REALITY ENGINE / 05
+          </div>
+
+          <h1>UNIVERSE <em>GENERATOR</em></h1>
+
+          <p class="muted">
+            Every decision creates a new reality. Make yours strange.
+          </p>
+        </div>
+
+        <div class="section-stamp">
+          REALITY ENGINE<br>
+          <b>UNSTABLE</b>
+        </div>
+      </div>
+
+      <div class="generator-grid">
+        <form id="universeForm" class="control-panel">
+
+          <label for="universeName">UNIVERSE DESIGNATION</label>
+          <input
+            id="universeName"
+            maxlength="32"
+            placeholder="e.g. The Rainy City"
+            value="The Rainy City"
+          >
+
+          <label for="universeMood">ATMOSPHERE</label>
+          <select id="universeMood">
+            <option value="Noir / Dark">Noir / Dark</option>
+            <option value="Neon / Electric">Neon / Electric</option>
+            <option value="Dreamlike / Surreal">Dreamlike / Surreal</option>
+            <option value="Broken / Glitching">Broken / Glitching</option>
+            <option value="Golden Hour / Hopeful">Golden Hour / Hopeful</option>
+          </select>
+
+          <label for="universeSpider">LOCAL SPIDER</label>
+          <select id="universeSpider">
+            <option>Spider-Gwen</option>
+            <option>Spider-Man Noir</option>
+            <option>Miles Morales</option>
+            <option>Peter Parker</option>
+            <option>Spider-Punk</option>
+            <option>Silk</option>
+            <option>Unknown Variant</option>
+          </select>
+
+          <label for="universeThreat">PRIMARY ANOMALY</label>
+          <select id="universeThreat">
+            <option>The city forgets tomorrow</option>
+            <option>Every reflection moves late</option>
+            <option>The moon is getting closer</option>
+            <option>Everyone has the same dream</option>
+            <option>Time skips at 3:17 AM</option>
+            <option>Someone is deleting people from photos</option>
+          </select>
+
+          <button class="btn btn-primary full-width" type="submit">
+            GENERATE REALITY ↗
+          </button>
+        </form>
+
+        <div class="universe-output" id="universeOutput">
+          <div class="output-sky">
+            <span class="moon"></span>
+            <span class="city-line"></span>
+            <span class="city-line second"></span>
+            <span class="web-line"></span>
+
+            <span class="output-coordinate">
+              EARTH-???? / AWAITING INPUT
+            </span>
+          </div>
+
+          <div class="output-copy">
+            <span class="eyebrow">REALITY REPORT</span>
+            <h2>YOUR WORLD IS WAITING.</h2>
+            <p class="muted">
+              Choose your variables and bring a new universe into existence.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLASSIFIED FILES -->
+    <section class="page" id="page-files" data-page="files">
+      <div class="section-head">
+        <div>
+          <div class="eyebrow">
+            <span class="redline"></span>
+            RECORDS DIVISION / 06
+          </div>
+
+          <h1>CLASSIFIED <em>FILES</em></h1>
+
+          <p class="muted">
+            Some files were buried for a reason. Open at your own risk.
+          </p>
+        </div>
+
+        <div class="section-stamp">
+          CLEARANCE<br>
+          <b>LEVEL 4</b>
+        </div>
+      </div>
+
+      <div class="file-toolbar">
+        <div class="file-tabs">
+          <button class="file-tab active" data-filter="all">ALL RECORDS</button>
+          <button class="file-tab" data-filter="people">SPIDER-PEOPLE</button>
+          <button class="file-tab" data-filter="universe">UNIVERSES</button>
+          <button class="file-tab" data-filter="anomaly">ANOMALIES</button>
+        </div>
+
+        <input id="fileSearch" placeholder="SEARCH THE ARCHIVE..." aria-label="Search files">
+      </div>
+
+      <div class="files-grid" id="filesGrid">
+
+        <button class="file-card" data-type="people" data-file="miles">
+          <div class="file-art art-miles">
+            <span>1610</span><b>✳</b>
+          </div>
+          <div class="file-meta">
+            <span>PERSONNEL / 001</span>
+            <b>MILES MORALES</b>
+            <small>Earth-1610 · Active</small>
+          </div>
+          <span class="file-lock">OPEN FILE ↗</span>
+        </button>
+
+        <button class="file-card" data-type="people" data-file="gwen">
+          <div class="file-art art-gwen">
+            <span>65</span><b>◉</b>
+          </div>
+          <div class="file-meta">
+            <span>PERSONNEL / 002</span>
+            <b>GWEN STACY</b>
+            <small>Earth-65 · Active</small>
+          </div>
+          <span class="file-lock">OPEN FILE ↗</span>
+        </button>
+
+        <button class="file-card" data-type="people" data-file="noir">
+          <div class="file-art art-noir">
+            <span>90214</span><b>♜</b>
+          </div>
+          <div class="file-meta">
+            <span>PERSONNEL / 003</span>
+            <b>SPIDER-MAN NOIR</b>
+            <small>Earth-90214 · Classified</small>
+          </div>
+          <span class="file-lock">OPEN FILE ↗</span>
+        </button>
+
+        <button class="file-card" data-type="universe" data-file="web">
+          <div class="file-art art-web">
+            <span>WEB-00</span><b>◎</b>
+          </div>
+          <div class="file-meta">
+            <span>LOCATION / 014</span>
+            <b>THE WEB OF LIFE</b>
+            <small>All realities · Unstable</small>
+          </div>
+          <span class="file-lock">OPEN FILE ↗</span>
+        </button>
+
+        <button class="file-card" data-type="anomaly" data-file="spot">
+          <div class="file-art art-spot">
+            <span>ANOMALY</span><b>◌</b>
+          </div>
+          <div class="file-meta">
+            <span>THREAT / 099</span>
+            <b>THE SPOT</b>
+            <small>Interdimensional · Hostile</small>
+          </div>
+          <span class="file-lock">OPEN FILE ↗</span>
+        </button>
+
+        <button class="file-card" data-type="anomaly" data-file="canon">
+          <div class="file-art art-canon">
+            <span>CANON EVENT</span><b>⌁</b>
+          </div>
+          <div class="file-meta">
+            <span>CONCEPT / 000</span>
+            <b>THE CANON</b>
+            <small>Multiverse-wide · Redacted</small>
+          </div>
+          <span class="file-lock">OPEN FILE ↗</span>
+        </button>
+
+      </div>
+    </section>
+
+    <!-- FINAL MISSION -->
+    <section class="page" id="page-final" data-page="final">
+      <div class="final-scene">
+
+        <div class="final-visual">
+          <div class="fracture fracture-one"></div>
+          <div class="fracture fracture-two"></div>
+          <div class="final-spider">✳</div>
+
+          <span class="final-coordinate">
+            EARTH-NULL / COLLAPSE IMMINENT
+          </span>
+        </div>
+
+        <div class="final-copy">
+          <div class="eyebrow">
+            <span class="redline"></span>
+            LAST RESORT / 07
+          </div>
+
+          <h1>THE FINAL <em>MISSION</em></h1>
+
+          <p class="final-lead">
+            The multiverse is breaking.<br>
+            And someone has to choose.
+          </p>
+
+          <p class="muted">
+            You have seen the people. The anomalies. The worlds that
+            should not exist. Now the archive needs one final answer.
+          </p>
+
+          <div class="final-choice" id="finalChoice">
+            <button class="choice" data-choice="save">
+              SAVE THE WEB
+              <small>Keep every universe connected.</small>
+            </button>
+
+            <button class="choice" data-choice="sever">
+              SEVER THE WEB
+              <small>Let every universe choose its own fate.</small>
+            </button>
+
+            <button class="choice" data-choice="rewrite">
+              REWRITE THE RULES
+              <small>Make a third option. Risk everything.</small>
+            </button>
+          </div>
+
+          <div id="finalResult" class="final-result hidden"></div>
+
+          <button class="btn btn-ghost" data-go="missions">
+            ← RETURN TO OPERATIONS
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILE DETAILS -->
+    <section class="page" id="page-file-detail" data-page="file-detail">
+      <button class="back-link" data-go="files">
+        ← BACK TO RECORDS
+      </button>
+
+      <div id="fileDetail"></div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>SPIDER-VERSE // ARCHIVE <i>©</i> MULTIVERSE DIVISION</span>
+
+    <span>
+      BUILT FOR THE CURIOUS.
+      <b>NOT FOR THE CARELESS.</b>
+    </span>
+
+    <button id="resetProgress">RESET LOCAL DATA ↻</button>
+  </footer>
+
+  <!-- NOTIFICATION -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop hidden" id="modalBackdrop">
+    <div class="modal">
+      <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+</html>
